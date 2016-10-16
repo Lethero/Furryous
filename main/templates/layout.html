@@ -8,16 +8,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/vendor/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     {% block css %}{% endblock %}
 
     <!-- JavaScript -->
     <script src="{% static 'scripts/vendor/jquery-3.1.0.js' %}"></script>
+    <script src="{% static 'scripts/main.js' %}"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
-    <header>
-        <h1 class="title"><a href="{% url 'index' %}">Furryous</a></h1>
-    </header>
     <nav>
         <div id="mobile-menu">
             <a class="ghost-button toggle-display" href="" data-target="#menu">
@@ -57,6 +56,9 @@
             </ul>
         </div>
     </nav>
+    <header>
+        <h1><a class="title text-center" href="{% url 'index' %}">Furryous</a></h1>
+    </header>
     {% block content %}{% endblock %}
 </body>
 </html>

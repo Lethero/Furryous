@@ -1,0 +1,108 @@
+/* General Styling */
+html {
+    font-size: 62.5%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #00E5EE;
+    position: relative;
+}
+
+.title {
+    font-size: 2rem;
+    color: white;
+    display: block;
+}
+    .title:hover {
+        text-shadow: 2px 2px 2px #000;
+    }
+
+.icon-bar {
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background: black;
+    transition: 0.5s;
+}
+    .active .icon-bar:first-child {
+        transform: rotate(-45deg) translate(-7px, 6px);
+    }
+    .active .icon-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .active .icon-bar:last-child {
+        transform: rotate(45deg) translate(-6px, -6px);
+    }
+
+.ghost-button {
+    padding: 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+    .ghost-button:active {
+        background-shadow: inset 2px 2px 2px #000;
+    }
+
+.text-center {
+    text-align: center;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+}
+
+/* Navbar */
+nav {
+    width: 100%;
+    /*position: fixed;
+    top: 0;
+    left: 0;*/
+    background: #878787;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /*box-shadow: 0 2px 2px #000;*/
+    z-index: 9999;
+    transition: 0.5s;
+}
+    nav.nav-up {
+        top: -100px;
+    }
+    #mobile-menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 7.5px 0;
+    }
+        #mobile-menu .toggle-display {
+            margin-left: auto;
+            margin-right: 10px
+        }
+            #mobile-menu .toggle-display:hover,
+            #mobile-menu .toggle-display.active {
+                background: #ababab;
+            }
+    #menu {
+        display: none;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+        #menu ul {
+            padding: 0;
+            margin: 1rem;
+        }
+            #menu ul li {
+                list-style-type: none;
+                margin: 0.5rem 0;
+            }
+                #menu ul li a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.25rem;
+                }
+                    #menu ul li a:hover {
+                        text-shadow: 2px 2px 2px #000;
+                    }
