@@ -1,10 +1,62 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Furryous{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor/normalize.css %}">
+    {% block css %}{% endblock %}
+
+    <!-- JavaScript -->
+    <script src="{% static 'scripts/vendor/jquery-3.1.0.js"></script>
+    {% block scripts %}{% endblock %}
 </head>
 <body>
-
+    <header>
+        <h1 class="title"><a href="{% url 'index' %}">Furryous</a></h1>
+    </header>
+    <nav>
+        <div id="mobile-menu">
+            <a class="ghost-button toggle-display" href="" data-target="#menu">
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+            </a>
+        </div>
+        <div id="menu">
+            <ul id="site-menu">
+                <li>
+                    <a href="">Browse</a>
+                </li>
+                <li>
+                    <a href="">Search</a>
+                </li>
+                <li>
+                    <a href="">Forum</a>
+                </li>
+            </ul>
+            <ul id="user-menu">
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="">My Account</a>
+                    </li>
+                    <li>
+                        <a href="">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Sign Up</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
 </body>
 </html>
