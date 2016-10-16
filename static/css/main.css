@@ -33,7 +33,7 @@ body {
         opacity: 0;
     }
     .active .icon-bar:last-child {
-        transform: rotate(45deg) translate(-6px, -6px);
+        transform: rotate(45deg) translate(-5px, -5px);
     }
 
 .ghost-button {
