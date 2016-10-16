@@ -19,6 +19,7 @@
 <body>
     <nav>
         <div id="mobile-menu">
+            <a class="title text-center" href="{% url 'index' %}">Furryous</a>
             <a class="ghost-button toggle-display" href="" data-target="#menu">
                 <div class="icon-bar"></div>
                 <div class="icon-bar"></div>
@@ -40,17 +41,17 @@
             <ul id="user-menu">
                 {% if user.is_authenticated %}
                     <li>
-                        <a href="">My Account</a>
+                        <a href="{% url 'user:profile' user.username %}">My Account</a>
                     </li>
                     <li>
-                        <a href="">Logout</a>
+                        <a href="{% url 'user:logout' %}">Logout</a>
                     </li>
                 {% else %}
                     <li>
-                        <a href="">Login</a>
+                        <a href="{% url 'users:login' %}">Login</a>
                     </li>
                     <li>
-                        <a href="">Sign Up</a>
+                        <a href="{% url 'users:signup' %}">Sign Up</a>
                     </li>
                 {% endif %}
             </ul>

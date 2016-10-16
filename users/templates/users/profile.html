@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block title %}{{ block.super }} | {{ viewed_user.username }}{% endblock %}
+{% block content %}
+    {% if viewed_user_profile.avatar %}
+        <img src="{{ viewed_user_profile.avatar.url }}" alt="{{ viewed_user.username }} Avatar">
+    {% else %}
+        <h1>{{ viewed_user.username }}</h1>
+    {% endif %}
+{% endblock %}
