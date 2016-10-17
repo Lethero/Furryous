@@ -16,6 +16,8 @@ class UserProfile(models.Model):
     avatar = models.ImageField(storage=upload_location, null=True,
                                verbose_name="Profile Picture", blank=True)
 
+    # Add something to track the user favorites.
+
     class Meta:
         ordering = ("-user",)
 

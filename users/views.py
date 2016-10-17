@@ -15,6 +15,12 @@ def user_profile(request, username):
     # Get the view user profile and pass it as the context
     return render(request, "users/profile.html", context)
 
+def user_gallery(request, username):
+    return HttpResponse("Coming Soon")
+
+def user_favorites(request, username):
+    return HttpResponse("Coming Soon")
+
 def user_login(request):
     # If the request was a POST
     if request.method == 'POST':
