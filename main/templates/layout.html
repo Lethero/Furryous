@@ -59,6 +59,7 @@
     </nav>
     <header>
         <h1><a class="title text-center" href="{% url 'index' %}">Furryous</a></h1>
+        {% block header %}{% endblock %}
     </header>
     {% block content %}{% endblock %}
 </body>

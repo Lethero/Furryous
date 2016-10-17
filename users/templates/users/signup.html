@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}{{ block.super }} | Sign Up{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users/forms.css' %}">
+{% endblock %}
+{% block content %}
+<form action="{% url 'user:signup' %}" method="post">
+    {% csrf_token %}
+    <h1 class="title">Sign Up</h1>
+    <p class="note"><span class="required"></span> Denotes required fields</p>
+    {% for field in form %}
+    <div class="form-group">
+        <label class="text-center" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+    </div>
+    {% endfor %}
+    <input type="submit" value="Sign Up">
+</form>
+{% endblock %}

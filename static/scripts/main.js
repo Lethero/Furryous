@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $("input:required").prev().addClass("required");
     /*
      * Hide navbar when scrolling down on phones.
      * Show when scrolling up.
